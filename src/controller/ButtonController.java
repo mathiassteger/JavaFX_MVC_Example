@@ -2,11 +2,12 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import model.Model;
 
 import java.util.Observable;
 import java.util.Observer;
 
-public class ButtonController implements Observer{
+public class ButtonController {
     @FXML Button button1;
     MainController parentMainController;
 
@@ -16,12 +17,6 @@ public class ButtonController implements Observer{
 
     @FXML
     public void onNothing(){
-        parentMainController.model().increase();
-    }
-
-
-    @Override
-    public void update(Observable o, Object arg) {
-
+        Model.getInstance().increaseRadioInteger();
     }
 }

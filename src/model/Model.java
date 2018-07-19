@@ -1,19 +1,22 @@
 package model;
 
-import java.util.Observable;
+import model.utilities.RadioInteger;
 
-public class Model extends Observable{
-    int number = 0;
+public class Model {
+    private static final Model INSTANCE = new Model();
+    private RadioInteger radioInteger = new RadioInteger();
 
-    public void increase(){
-        number++;
-        setChanged();
-        if(number % 2 == 0){
-            notifyObservers(new Even());
-        } else {
-            notifyObservers(new Uneven());
-        }
+    private Model(){}
+
+    public void increaseRadioInteger(){
+        radioInteger.increase();
     }
 
+    public static Model getInstance() {
+        return INSTANCE;
+    }
 
+    public RadioInteger getRadioInteger(){
+        return radioInteger;
+    }
 }

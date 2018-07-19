@@ -6,7 +6,6 @@ import model.Model;
 
 
 public class MainController {
-    private Model model;
     @FXML
     public Parent embButton;
     @FXML
@@ -22,19 +21,9 @@ public class MainController {
         Otherwise, you will get NullPointerExceptions in the initialize function, since the controller is null.
      */
 
-    public void setModel(Model model){
-        this.model = model;
-        model.addObserver(embButtonController);
-        model.addObserver(embLabelController);
-    }
-
     @FXML
     public void initialize(){
         embButtonController.setParentMainController(this);
         embLabelController.setParentMainController(this);
-    }
-
-    public Model model(){
-        return this.model;
     }
 }

@@ -13,7 +13,6 @@ public class MainApp extends Application{
         Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
         MainController mainController = (MainController) loader.getController();
-        mainController.setModel(new Model());
         primaryStage.show();
     }
 
